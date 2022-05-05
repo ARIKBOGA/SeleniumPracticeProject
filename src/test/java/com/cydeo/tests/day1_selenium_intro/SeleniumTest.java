@@ -21,36 +21,31 @@ public class SeleniumTest {
         String title = driver.getTitle();
 
         System.out.println(title);
-
         Thread.sleep(3000);
 
         driver.navigate().to("https://www.idata.com.tr");
-
         Thread.sleep(3000);
 
         driver.navigate().back();
-
         Thread.sleep(3000);
 
         driver.navigate().forward();
-
         Thread.sleep(3000);
 
         driver.navigate().to("https://www.javatpoint.com/");
-
         Thread.sleep(1000);
+
         //Maximize the browser
         driver.manage().window().maximize();
-
         Thread.sleep(3000);
+
         //Scroll down the webpage by 5000 pixels
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("scrollBy(0, 5000)");
-
         Thread.sleep(3000);
+
         // Click on the Search button
         driver.findElement(By.linkText("Java")).click();
-
         Thread.sleep(3000);
 
         driver.quit();
