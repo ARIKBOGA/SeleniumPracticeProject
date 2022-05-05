@@ -1,4 +1,4 @@
-package com.cydeo.tests;
+package com.cydeo.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -9,5 +9,5 @@ public class Driver {
         WebDriverManager.chromedriver().setup();
     }
 
-    public static final WebDriver driver = new ChromeDriver();
+    public static final WebDriver CHROME_DRIVER = new ChromeDriver();
 }

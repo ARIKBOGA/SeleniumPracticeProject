@@ -1,8 +1,8 @@
 package com.cydeo.tests.day2_locators_getText_getAttribute.homeWorks;
 
+import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
-
-import static com.cydeo.tests.Driver.driver;
+import org.openqa.selenium.WebDriver;
 
 public class HomeWork3 {
     /*
@@ -16,6 +16,7 @@ public class HomeWork3 {
             Expected: Google
      */
     public static void main(String[] args) {
+        WebDriver driver = Driver.CHROME_DRIVER;
         driver.get("https://google.com");
         driver.findElement(By.linkText("Gmail"))
                 .click();

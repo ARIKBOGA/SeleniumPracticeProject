@@ -2,7 +2,7 @@ package com.cydeo.tests.day2_locators_getText_getAttribute.homeWorks;
 
 import org.openqa.selenium.By;
 
-import static com.cydeo.tests.Driver.driver;
+import static com.cydeo.utilities.Driver.CHROME_DRIVER;
 
 public class HomeWork2 {
     /*
@@ -13,8 +13,8 @@ public class HomeWork2 {
             Expected: “Log in to ZeroBank”
      */
     public static void main(String[] args) throws InterruptedException {
-        driver.get("http://zero.webappsecurity.com/login.html");
-        String actualHeader = driver
+        CHROME_DRIVER.get("http://zero.webappsecurity.com/login.html");
+        String actualHeader = CHROME_DRIVER
                 .findElement(By.tagName("h3"))
                 .getText();
 
@@ -24,6 +24,6 @@ public class HomeWork2 {
 
         Thread.sleep(3000);
 
-        driver.quit();
+        CHROME_DRIVER.quit();
     }
 }

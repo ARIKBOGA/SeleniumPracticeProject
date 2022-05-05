@@ -19,12 +19,14 @@ public class HomeWork1 {
          */
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver.manage()
+                .window()
+                .maximize();
 
         driver.get("https://www.etsy.com");
 
-        WebElement searchBox = driver.findElement(By.id("global-enhancements-search-query"));
-        searchBox.sendKeys("wooden spoon" + Keys.ENTER);
+        driver.findElement(By.id("global-enhancements-search-query"))
+                .sendKeys("wooden spoon" + Keys.ENTER);
 
         /** This (below) element can be used instead of "Keys.ENTER" */
         // WebElement searchButton = driver.findElement(By.cssSelector(".wt-input-btn-group .wt-input-btn-group__btn"));
