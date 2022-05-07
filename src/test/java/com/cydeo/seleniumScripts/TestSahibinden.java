@@ -15,8 +15,10 @@ public class TestSahibinden {
 
         System.out.print("Enter city name (English letters): ");
         String cityName = sc.nextLine().toLowerCase();
-        System.out.print("Enter max price: ");
+        System.out.print("Enter max price (Integer): ");
         String maxPrice = sc.nextLine();
+        System.out.print("Enter special keyword to search: ");
+        String specialKeyword = sc.nextLine();
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
@@ -81,7 +83,7 @@ public class TestSahibinden {
         Thread.sleep(3000);
 
         driver.findElement(By.xpath("//*[@id=\"searchResultsSearchForm\"]/div/div[2]/div[10]/dl/dd/ul/li/input"))
-                .sendKeys("vga" + Keys.ENTER);
+                .sendKeys(specialKeyword + Keys.ENTER);
 
         Thread.sleep(5000);
 
