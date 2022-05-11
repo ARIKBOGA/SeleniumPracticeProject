@@ -57,5 +57,7 @@ public class T5_checkboxes {
 
         //BREAK UNTIL 3.10CST
 
+        driver.quit();
+
     }
 }

@@ -23,13 +23,13 @@ public class T1_xpath_cssSelector_practice {
         //locator only (total of 6)
         //a. “Home” link
         //Locate homeLink using cssSelector, class value
-        WebElement homeLink_ex1= driver.findElement(By.cssSelector("a[class='nav-link']"));
+        WebElement homeLink_ex1 = driver.findElement(By.cssSelector("a[class='nav-link']"));
 
         //Locate homeLink using cssSelector syntax #2
-        WebElement homeLink_ex2= driver.findElement(By.cssSelector("a.nav-link"));
+        WebElement homeLink_ex2 = driver.findElement(By.cssSelector("a.nav-link"));
 
         //Locate homeLink using cssSelector, href value
-        WebElement homeLink_ex3= driver.findElement(By.cssSelector("a[href='/']"));
+        WebElement homeLink_ex3 = driver.findElement(By.cssSelector("a[href='/']"));
 
         //b. “Forgot password” header
         //Locate header using cssSelector: locate parent element and move down to h2
@@ -58,7 +58,6 @@ public class T1_xpath_cssSelector_practice {
 
         //f. “Powered by Cydeo text
         WebElement poweredByCydeoText = driver.findElement(By.xpath("//div[@style='text-align: center;']"));
-
 
 
         //4. Verify all web elements are displayed.
