@@ -21,6 +21,6 @@ public class HomeWork4 {
 
         System.out.println((driver.getTitle().equals("Practice")) ? "PASSED" : "FAILED");
 
-        driver.quit();
+        //driver.quit();
     }
 }
