@@ -28,6 +28,8 @@ public class DateSelect {
 
     @Test
     public void selectingDateOnDropdownTest() {
+
+        // navigate to web page which is going to be tested
         driver.navigate().to("https://practice.cydeo.com/dropdown");
 
         // creating select menus
