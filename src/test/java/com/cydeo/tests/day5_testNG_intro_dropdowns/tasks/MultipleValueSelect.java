@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class MultipleValueSelect {
+
     private static final WebDriver driver;
 
     static {
@@ -38,7 +39,7 @@ public class MultipleValueSelect {
         // navigate to web page which is going to be tested
         driver.navigate().to("https://practice.cydeo.com/dropdown");
 
-        // creayte select menu
+        // create select menu
         Select multipleSelectMenu = new Select(driver.findElement(By.xpath("//select[@name='Languages']")));
 
 
