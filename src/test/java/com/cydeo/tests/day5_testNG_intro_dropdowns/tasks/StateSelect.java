@@ -15,7 +15,7 @@ public class StateSelect {
     WebDriver driver;
 
     @BeforeMethod
-    public void setDriver(){
+    public void setDriver() {
         //Do browser driver setup
         //Open browser
         driver = WebDriverFactory.getDriver("chrome");
@@ -34,7 +34,7 @@ public class StateSelect {
         //Go to http://practice.cybertekschool.com/dropdown
         driver.navigate().to("http://practice.cybertekschool.com/dropdown");
 
-        Select select = new Select( driver.findElement(By.xpath("//select[@id='state']")));
+        Select select = new Select(driver.findElement(By.xpath("//select[@id='state']")));
 
         // selecting Illinois
         select.selectByVisibleText("Illinois");
@@ -54,7 +54,7 @@ public class StateSelect {
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
 }
