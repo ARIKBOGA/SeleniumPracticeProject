@@ -25,7 +25,7 @@ public class ValueSelect {
     }
 
     @Test
-    public void selectingDateOnDropdownTest() throws InterruptedException {
+    public void selectingValueOnDropdownTest() throws InterruptedException {
 
         // navigate to web page which is going to be tested
         driver.navigate().to("https://practice.cydeo.com/dropdown");
