@@ -22,28 +22,32 @@ public class T3_RadioButton_cont {
 
         //Locate name='sports' radio buttons and store them in a List of Web Element
 
-        clickAndVerifyRadioButton(driver, "sport", "hockey" );
+        clickAndVerifyRadioButton(driver, "sport", "hockey");
 
         clickAndVerifyRadioButton(driver, "sport", "football");
 
         clickAndVerifyRadioButton(driver, "color", "yellow");
 
+        driver.quit();
+
     }
 
-    private static void clickAndVerifyRadioButton(WebDriver driver, String nameAttribute, String idValue){
+    private static void clickAndVerifyRadioButton(WebDriver driver, String nameAttribute, String idValue) {
+
         List<WebElement> radioButtons = driver.findElements(By.name(nameAttribute));
 
-        //Loop through the List of WebElement and select matching result "hockey"
-        for (WebElement each : radioButtons) {
-            String eachId = each.getAttribute("id");
+        WebElement optionalWebElement = radioButtons.stream()
+                .filter(p -> p.getAttribute("id").equals(idValue))
+                .findFirst()
+                .orElse(null);
 
-            if (eachId.equals(idValue)){
+        assert optionalWebElement != null;
+        optionalWebElement.click();
+        System.out.println(optionalWebElement.getAttribute("id") + " is selected : " + optionalWebElement.isSelected());
 
-                each.click();
-                System.out.println( eachId + " is selected : " + each.isSelected());
-                break;
-            }
-        }
+
+
+
 
     }
 

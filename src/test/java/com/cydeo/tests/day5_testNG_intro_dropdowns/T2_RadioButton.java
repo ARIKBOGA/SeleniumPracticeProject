@@ -33,5 +33,7 @@ public class T2_RadioButton {
         }else{
             System.out.println("Button is not selected. Verification FAILED!!!");
         }
+
+        driver.quit();
     }
 }
