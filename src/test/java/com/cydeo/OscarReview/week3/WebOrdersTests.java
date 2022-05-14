@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class WebOrdersTests {
 
@@ -61,12 +62,28 @@ locate all checkBoxes: I need to find a locator which will show(point) all the c
         checkBoxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
         checkBoxes.stream()
                 .map(WebElement::isSelected)
-                .forEach(p->Assert.assertFalse(p,"The checkBox is still selected, we couldn't unselect all"));
+                .forEach(p -> Assert.assertFalse(p, "The checkBox is still selected, we couldn't unselect all"));
     }
 
     @Test
     public void deletePersonTest() {
         System.out.println("Implementing step 3 and 4 of Test Case 2");
+
+        String name = "Bob Feather";
+
+        WebElement checkBox = driver.findElement(By.xpath("//td[.='" + name + "']/preceding-sibling::*/input"));
+        checkBox.click();
+
+        driver.findElement(By.id("ctl00_MainContent_btnDelete")).click();
+
+        boolean isStillExist = driver.findElements(By.xpath("//tr//td[2]"))
+                .stream()
+                .map(WebElement::getText)
+                .collect(Collectors.toList())
+                .contains(name);
+
+        Assert.assertFalse(isStillExist);
+
     }
 
 
