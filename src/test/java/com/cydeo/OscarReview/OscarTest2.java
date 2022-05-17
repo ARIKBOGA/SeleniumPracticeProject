@@ -1,4 +1,4 @@
-package com.cydeo.seleniumScripts;
+package com.cydeo.OscarReview;
 
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;

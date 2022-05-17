@@ -10,16 +10,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SeleniumScript7
-{
-    public static void main(String[] args)
-    {
-        WebDriver driver=new FirefoxDriver();
+public class SeleniumScript7 {
+    public static void main(String[] args) {
+        WebDriver driver = new FirefoxDriver();
         driver.get("Enter URL here to verify");
         WebElement listBox = driver.findElement(By.name("country"));
-        Select select=new Select(listBox);
+        Select select = new Select(listBox);
         List<WebElement> allOptions = select.getOptions();
-        ArrayList<String> allText=new ArrayList<>();
+        ArrayList<String> allText = new ArrayList<>();
 
         for (WebElement allOption : allOptions) {
             String text = allOption.getText();
@@ -27,8 +25,7 @@ public class SeleniumScript7
         }
 
         Collections.sort(allText);
-        for(String s:allText)
-        {
+        for (String s : allText) {
             System.out.println(s);
         }
     }
