@@ -38,18 +38,18 @@ public class DateSelect {
         Select dropdownDay = new Select(driver.findElement(By.xpath("//select[@id='day']")));
 
         // selecting date 1923 / December / 1
-        dropdownYear.selectByVisibleText("2022");
+        dropdownYear.selectByVisibleText("1923");
         dropdownMonth.selectByValue("11");
         dropdownDay.selectByIndex(0);
 
         // creating isSelected boolean variables
-        boolean is2022Selected = driver.findElement(By.xpath("//option[@value='2022']")).isSelected();
+        boolean is1923Selected = driver.findElement(By.xpath("//option[@value='1923']")).isSelected();
         boolean isDecemberSelected = driver.findElement(By.xpath("//select[@id='month']//option[@value='11']")).isSelected();
         boolean is1Selected = driver.findElement(By.xpath("//select[@id='day']//option[@value='1']")).isSelected();
 
         // Assert all
         Assert.assertTrue(is1Selected);
-        Assert.assertTrue(is2022Selected);
+        Assert.assertTrue(is1923Selected);
         Assert.assertTrue(isDecemberSelected);
 
     }
