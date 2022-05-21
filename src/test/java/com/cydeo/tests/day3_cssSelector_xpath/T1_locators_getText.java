@@ -1,6 +1,6 @@
 package com.cydeo.tests.day3_cssSelector_xpath;
 
-import com.cydeo.utilities.Driver;
+import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,7 @@ public class T1_locators_getText {
         //1- Open a Chrome browser
         //WebDriverManager.chromedriver().setup();
         //WebDriver driver = new ChromeDriver();
-        WebDriver driver = Driver.CHROME_DRIVER;
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
 
         driver.manage().window().maximize();
 

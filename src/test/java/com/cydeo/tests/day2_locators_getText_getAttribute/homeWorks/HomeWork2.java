@@ -1,8 +1,9 @@
 package com.cydeo.tests.day2_locators_getText_getAttribute.homeWorks;
 
+import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
-import static com.cydeo.utilities.Driver.CHROME_DRIVER;
 
 public class HomeWork2 {
     /*
@@ -13,6 +14,7 @@ public class HomeWork2 {
             Expected: “Log in to ZeroBank”
      */
     public static void main(String[] args) throws InterruptedException {
+        WebDriver CHROME_DRIVER = WebDriverFactory.getDriver("chrome");
         CHROME_DRIVER.get("http://zero.webappsecurity.com/login.html");
         String actualHeader = CHROME_DRIVER
                 .findElement(By.tagName("h3"))

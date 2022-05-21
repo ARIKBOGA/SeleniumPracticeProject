@@ -1,6 +1,6 @@
 package com.cydeo.tests.day5_testNG_intro_dropdowns.tasks;
 
-import com.cydeo.utilities.Driver;
+import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -17,7 +17,7 @@ public class DateSelect {
 
     static {
         // Driver class is my own utility class to provide WebDriver as default
-        driver = Driver.CHROME_DRIVER;
+        driver = WebDriverFactory.getDriver("chrome");
     }
 
     @BeforeMethod

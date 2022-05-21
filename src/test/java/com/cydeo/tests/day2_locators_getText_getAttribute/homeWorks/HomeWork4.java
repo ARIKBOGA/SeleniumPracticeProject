@@ -1,6 +1,6 @@
 package com.cydeo.tests.day2_locators_getText_getAttribute.homeWorks;
 
-import com.cydeo.utilities.Driver;
+import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -15,7 +15,7 @@ public class HomeWork4 {
         PS: Locate “Home” link using “className” locator
      */
     public static void main(String[] args) {
-        WebDriver driver = Driver.CHROME_DRIVER;
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("https://practice.cydeo.com/inputs ");
         driver.findElement(By.className("nav-link")).click();
 
