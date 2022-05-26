@@ -28,6 +28,11 @@ public class ReadingProperties {
         System.out.println("properties.getProperty(\"username\") = "
                 + properties.getProperty("username"));
 
+
+        properties.replace("searchValue", "ferrari");
+        // Properties class extends HashTable class by default. So it is instanced of the Map.
+        properties.forEach((key, value) -> System.out.println(key + " : " + value));
+
     }
 
 }

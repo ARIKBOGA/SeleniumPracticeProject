@@ -16,7 +16,7 @@ public class T4_IframePractice {
 
     //@BeforeMethod
     @BeforeClass
-    public void setupMethod(){
+    public void setupMethod() {
         //1. Open browser
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -28,7 +28,7 @@ public class T4_IframePractice {
 
     //@Ignore
     @Test
-    public void iframe_test(){
+    public void iframe_test() {
 
         //We need to switch driver's focus to iframe
         //option #1- switching to iframe using id attribute value

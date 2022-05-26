@@ -12,7 +12,7 @@ public class OscarTest3 {
         Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Sony vaio i5")).click();
         Thread.sleep(4000);
-        String actualPrice = driver.findElement(By.xpath("//*[@id=\"tbodyid\"]/h3")).getText().substring(1,4);
+        String actualPrice = driver.findElement(By.xpath("//*[@id=\"tbodyid\"]/h3")).getText().substring(1, 4);
         String expectedPrice = "790";
         //System.out.println(actualPrice);
         System.out.println(expectedPrice.equals(actualPrice));

@@ -18,17 +18,6 @@ import java.util.concurrent.TimeUnit;
 public class WindowHandleTask {
     static WebDriver driver = WebDriverFactory.getDriver("chrome");
 
-    @BeforeMethod
-    public void setDriver() {
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    @AfterMethod
-    public void teardown() {
-        driver.quit();
-    }
-
     public static void goToWindowHandle(WebDriver driver, String windowHandleString) {
         Set<String> windowHandles = driver.getWindowHandles();
 
@@ -59,6 +48,17 @@ public class WindowHandleTask {
         WebElement selectElement = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/select[1]"));
         Select select = new Select(selectElement);
         select.selectByIndex(todayMonth - 1);
+    }
+
+    @BeforeMethod
+    public void setDriver() {
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    @AfterMethod
+    public void teardown() {
+        driver.quit();
     }
 
     private void selectDay(WebDriver driver, int todayDay) {

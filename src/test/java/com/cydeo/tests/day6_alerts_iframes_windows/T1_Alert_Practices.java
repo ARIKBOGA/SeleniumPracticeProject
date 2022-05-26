@@ -17,7 +17,7 @@ public class T1_Alert_Practices {
     WebDriver driver;
 
     @BeforeMethod
-    public void setupMethod(){
+    public void setupMethod() {
         //1. Open browser
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -28,7 +28,7 @@ public class T1_Alert_Practices {
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 

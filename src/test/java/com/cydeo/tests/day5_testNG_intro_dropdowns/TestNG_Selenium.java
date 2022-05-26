@@ -14,7 +14,7 @@ public class TestNG_Selenium {
     WebDriver driver;
 
     @BeforeMethod
-    public void setupMethod(){
+    public void setupMethod() {
         //Do browser driver setup
         //Open browser
         driver = WebDriverFactory.getDriver("chrome");
@@ -27,12 +27,12 @@ public class TestNG_Selenium {
     }
 
     @AfterMethod
-    public void tearDownMethod(){
+    public void tearDownMethod() {
         driver.close();
     }
 
     @Test
-    public void selenium_test(){
+    public void selenium_test() {
 
         //Get "https://google.com"
         driver.get("https://google.com");
@@ -42,7 +42,7 @@ public class TestNG_Selenium {
         String actualTitle = driver.getTitle();
         String expectedTitle = "Google";
 
-        Assert.assertEquals(actualTitle,expectedTitle, "Title is not matching here." );
+        Assert.assertEquals(actualTitle, expectedTitle, "Title is not matching here.");
         //BREAK UNTIL 3.09PM CST
     }
 

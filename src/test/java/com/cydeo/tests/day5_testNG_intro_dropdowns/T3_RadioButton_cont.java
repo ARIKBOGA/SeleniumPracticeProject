@@ -46,9 +46,6 @@ public class T3_RadioButton_cont {
         System.out.println(optionalWebElement.getAttribute("id") + " is selected : " + optionalWebElement.isSelected());
 
 
-
-
-
     }
 
 }

@@ -26,11 +26,11 @@ public class T2_RadioButton {
         hockeyRadioBtn.click();
 
         //4. Verify “Hockey” radio button is selected after clicking.
-        if (hockeyRadioBtn.isSelected()){
+        if (hockeyRadioBtn.isSelected()) {
 
             System.out.println("Button is selected. Verification PASSED!");
 
-        }else{
+        } else {
             System.out.println("Button is not selected. Verification FAILED!!!");
         }
 

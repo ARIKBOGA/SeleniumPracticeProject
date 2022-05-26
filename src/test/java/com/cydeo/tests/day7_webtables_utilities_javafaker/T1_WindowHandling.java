@@ -14,7 +14,7 @@ public class T1_WindowHandling {
     public WebDriver driver;
 
     @BeforeMethod
-    public void setupMethod(){
+    public void setupMethod() {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -22,7 +22,7 @@ public class T1_WindowHandling {
     }
 
     @Test
-    public void window_handling_test(){
+    public void window_handling_test() {
         //2. Go to: https://www.amazon.com
         driver.get("https://www.amazon.com");
 

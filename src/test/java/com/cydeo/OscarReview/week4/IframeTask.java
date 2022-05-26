@@ -41,6 +41,6 @@ public class IframeTask {
         String actualIframeText = p_element_iframe.getText();
 
         Assert.assertTrue(actualIframeText.startsWith(expectedIframeText));
-        Assert.assertEquals(expectedIframeText, actualIframeText,"Actual and expected Text do not match");
+        Assert.assertEquals(expectedIframeText, actualIframeText, "Actual and expected Text do not match");
     }
 }

@@ -16,7 +16,7 @@ public class T3_CRM_LOGIN {
     public WebDriver driver;
 
     @BeforeMethod
-    public void setupMethod(){
+    public void setupMethod() {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -25,7 +25,7 @@ public class T3_CRM_LOGIN {
 
     //TC #3: Login scenario
     @Test
-    public void crm_login_test(){
+    public void crm_login_test() {
 
         //2. Go to : https://login1.nextbasecrm.com/
         driver.get("https://login1.nextbasecrm.com/");
@@ -52,7 +52,7 @@ public class T3_CRM_LOGIN {
     }
 
     @Test
-    public void crm_login_test_2(){
+    public void crm_login_test_2() {
 
         //2. Go to : https://login1.nextbasecrm.com/
         driver.get("https://login1.nextbasecrm.com/");
@@ -68,13 +68,13 @@ public class T3_CRM_LOGIN {
 
 
     @Test
-    public void crm_login_test_3(){
+    public void crm_login_test_3() {
 
         //2. Go to : https://login1.nextbasecrm.com/
         driver.get("https://login1.nextbasecrm.com/");
 
         //Calling my utility method to login helpdesk
-        CRM_Utilities.crm_login(driver, "helpdesk2@cybertekschool.com", "UserUser" );
+        CRM_Utilities.crm_login(driver, "helpdesk2@cybertekschool.com", "UserUser");
 
         //6. Verify title is as expected:
         //Expected: Portal

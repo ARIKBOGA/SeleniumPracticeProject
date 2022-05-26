@@ -40,7 +40,7 @@ public class SeleniumTest {
         Thread.sleep(3000);
 
         //Scroll down the webpage by 5000 pixels
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0, 5000)");
         Thread.sleep(3000);
 

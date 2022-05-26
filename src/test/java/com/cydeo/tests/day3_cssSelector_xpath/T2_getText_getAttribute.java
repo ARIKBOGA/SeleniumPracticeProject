@@ -20,12 +20,12 @@ public class T2_getText_getAttribute {
         //Expected: Remember me on this computer
         WebElement rememberMeLabel = driver.findElement(By.className("login-item-checkbox-label"));
 
-        String expectedRememberMeLabel= "Remember me on this computer";
+        String expectedRememberMeLabel = "Remember me on this computer";
         String actualRememberMeLabel = rememberMeLabel.getText();
 
-        if (actualRememberMeLabel.equals(expectedRememberMeLabel)){
+        if (actualRememberMeLabel.equals(expectedRememberMeLabel)) {
             System.out.println("Label verification PASSED!");
-        }else{
+        } else {
             System.out.println("Label verification FAILED!!!");
         }
 
@@ -36,9 +36,9 @@ public class T2_getText_getAttribute {
         String expectedForgotPasswordLinkText = "FORGOT YOUR PASSWORD?";
         String actualForgotPasswordLinkText = forgotPasswordLink.getText();
 
-        if (actualForgotPasswordLinkText.equals(expectedForgotPasswordLinkText)){
+        if (actualForgotPasswordLinkText.equals(expectedForgotPasswordLinkText)) {
             System.out.println("Forgot password link verification PASSED!");
-        }else {
+        } else {
             System.out.println("actualForgotPasswordLinkText = " + actualForgotPasswordLinkText);
             System.out.println("expectedForgotPasswordLinkText = " + expectedForgotPasswordLinkText);
 
@@ -53,12 +53,11 @@ public class T2_getText_getAttribute {
 
         System.out.println("actualHrefAttributeValue = " + actualHrefAttributeValue);
 
-        if (actualHrefAttributeValue.contains(expectedInHref)){
+        if (actualHrefAttributeValue.contains(expectedInHref)) {
             System.out.println("HREF attribute value verification PASSED!");
-        }else{
+        } else {
             System.out.println("HREF attribute value verification FAILED!!!");
         }
-
 
 
     }

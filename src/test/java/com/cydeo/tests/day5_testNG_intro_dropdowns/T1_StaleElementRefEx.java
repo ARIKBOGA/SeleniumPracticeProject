@@ -42,7 +42,7 @@ public class T1_StaleElementRefEx {
 
             System.out.println("deleteButton.isDisplayed() = " + deleteButton.isDisplayed());
 
-        }catch (StaleElementReferenceException e){
+        } catch (StaleElementReferenceException e) {
 
             System.out.println("-->StaleElementReferenceException exception is thrown");
             System.out.println("-->This means the web element is completely deleted from the page");

@@ -15,9 +15,9 @@ public class Task1 {
 
         String currentTitle = driver.getTitle();
 
-        if(currentTitle.equals("Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports & Videos")){
+        if (currentTitle.equals("Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports & Videos")) {
             System.out.println("PASSED");
-        }else {
+        } else {
             System.err.println("FAILED");
         }
 

@@ -17,7 +17,7 @@ public class T4_SimpleDropdowns {
     WebDriver driver;
 
     @BeforeMethod
-    public void setupMethod(){
+    public void setupMethod() {
         //1. Open Chrome browser
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -28,7 +28,7 @@ public class T4_SimpleDropdowns {
     }
 
     @Test
-    public void simpleDropdownTest(){
+    public void simpleDropdownTest() {
 
         //3. Verify “Simple dropdown” default selected value is correct
         Select simpleDropdown = new Select(driver.findElement(By.xpath("//select[@id='dropdown']")));
@@ -57,7 +57,7 @@ public class T4_SimpleDropdowns {
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
 

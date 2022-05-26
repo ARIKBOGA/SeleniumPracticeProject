@@ -42,9 +42,9 @@ public class T1_locators_getText {
         String expectedErrorMessage = "Incorrect login or password";
         String actualErrorMessage = errorMessage.getText();
 
-        if (actualErrorMessage.equals(expectedErrorMessage)){
+        if (actualErrorMessage.equals(expectedErrorMessage)) {
             System.out.println("Error message verification PASSED!");
-        }else{
+        } else {
             System.out.println("Error message verification FAILED!!!");
         }
 
