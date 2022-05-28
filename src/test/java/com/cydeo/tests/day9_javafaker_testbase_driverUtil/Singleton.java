@@ -1,5 +1,7 @@
 package com.cydeo.tests.day9_javafaker_testbase_driverUtil;
 
+import com.github.javafaker.Faker;
+
 public class Singleton {
 
     //#2- create private static String
@@ -16,11 +18,15 @@ public class Singleton {
         if (word == null) {
             System.out.println("First time call. Word object is null. " +
                     "Assigning value to it now!");
-            word = "something";
+            word = new Faker().gameOfThrones().character();
         } else {
             System.out.println("Word already has value.");
         }
 
         return word;
+    }
+
+    public static void clear() {
+        word = null;
     }
 }

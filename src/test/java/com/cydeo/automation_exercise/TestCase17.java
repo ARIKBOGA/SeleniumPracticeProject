@@ -25,7 +25,6 @@ public class TestCase17 {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-
     @AfterMethod
     public void tearDown() {
         driver.close();
@@ -65,27 +64,23 @@ public class TestCase17 {
 
 
         // a list for elements which is represents price on the html table
-        List<WebElement> chartElementPrices = driver.findElements(By.xpath("//tr/td[@class='cart_total']/p"));
+        List<WebElement> chartElementPrices = driver.findElements(By.xpath("//p[@class='cart_total_price']"));
 
         // a list for elements which is presents for delete the element from the html table
-        List<WebElement> chartDeleteButtons = driver.findElements(By.xpath("//tr/td[@class='cart_total']/p/../../td[@class='cart_delete']"));
+        List<WebElement> chartDeleteButtons = driver.findElements(By.xpath("//p[@class='cart_total_price']/../following-sibling::td[1]/a"));
 
 
-        // a list for elements which are going to be deleted
-        List<WebElement> willBeDeleted = new ArrayList<>();
 
         // if an element has a price more than 600, add that element to "willBeDeleted" list so that will be deleted
         for (int i = 0; i < chartElementPrices.size(); i++) {
             if (Integer.parseInt(chartElementPrices.get(i).getText().substring(4)) > 600) {
-                willBeDeleted.add(chartDeleteButtons.get(i));
+
+                // click to "X" button to delete
+                chartDeleteButtons.get(i).click();
+                HandleWait.staticWait(1);
+
             }
         }
-
-        // click to "X" button to delete
-        willBeDeleted.forEach(p -> {
-            p.click();
-            HandleWait.staticWait(1);
-        });
 
 
         // get elements again for checking if they include an element which has price more than 600
@@ -97,6 +92,7 @@ public class TestCase17 {
         for (WebElement price : chartElementPrices) {
             if (Integer.parseInt(price.getText().substring(4)) > 600)
                 isContainsOverLimitPrice = true;
+            break;
         }
 
 

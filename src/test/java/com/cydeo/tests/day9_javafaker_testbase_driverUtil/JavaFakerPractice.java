@@ -3,12 +3,14 @@ package com.cydeo.tests.day9_javafaker_testbase_driverUtil;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 
+import java.util.Locale;
+
 public class JavaFakerPractice {
 
     @Test
     public void test1() {
         //Creating Faker object to reach methods
-        Faker faker = new Faker();
+        Faker faker = new Faker(new Locale("TR"));
         //Faker faker = new Faker(new Locale("fr"));
 
         System.out.println("faker.name().firstName() = " + faker.name().firstName());
@@ -31,10 +33,16 @@ public class JavaFakerPractice {
                 + faker.bothify("##?#-##?#-#?#?#-##??"));
 
         System.out.println("faker.finance().creditCard() = "
-                + faker.finance().creditCard().replaceAll("-", ""));
+                + faker.finance().creditCard());
 
         System.out.println("faker.chuckNorris().fact() = "
                 + faker.chuckNorris().fact().replaceAll("Chuck Norris", "Muhtar"));
+
+
+        System.out.println(faker.address().streetAddress());
+        System.out.println("faker.app().name() = " + faker.app().name());
+        System.out.println("faker.artist().name() = " + faker.artist().name());
+
 
 
     }
