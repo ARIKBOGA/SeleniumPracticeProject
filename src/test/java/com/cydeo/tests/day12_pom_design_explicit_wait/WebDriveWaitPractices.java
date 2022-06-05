@@ -2,23 +2,23 @@ package com.cydeo.tests.day12_pom_design_explicit_wait;
 
 import com.cydeo.pages.DynamicLoad1Page;
 import com.cydeo.pages.DynamicLoad7Page;
-import com.cydeo.utilities.Driver;
+import com.cydeo.tests.base.TestBase;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class WebDriveWaitPractices {
+public class WebDriveWaitPractices extends TestBase {
 
     @Test
     public void dynamic_load_7_test() {
         //1. Go to https://practice.cydeo.com/dynamic_loading/7
-        Driver.getDriver().get("https://practice.cydeo.com/dynamic_loading/7");
+        driver.get("https://practice.cydeo.com/dynamic_loading/7");
 
         //2. Wait until title is “Dynamic title”
 
         //creating the wait object to be able to create certain condition to wait
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
         //use the "wait" object to create our expected condition
         wait.until(ExpectedConditions.titleIs("Dynamic title"));
@@ -37,10 +37,10 @@ public class WebDriveWaitPractices {
     @Test
     public void dynamic_load_1_test() {
         //1. Go to https://practice.cydeo.com/dynamic_loading/1
-        Driver.getDriver().get("https://practice.cydeo.com/dynamic_loading/1");
+        driver.get("https://practice.cydeo.com/dynamic_loading/1");
 
         DynamicLoad1Page dynamicLoad1Page = new DynamicLoad1Page();
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
         //2. Click to start
         dynamicLoad1Page.startButton.click();

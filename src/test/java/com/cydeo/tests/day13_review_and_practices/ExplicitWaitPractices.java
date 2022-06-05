@@ -1,8 +1,8 @@
 package com.cydeo.tests.day13_review_and_practices;
 
 import com.cydeo.pages.DynamicControlsPage;
+import com.cydeo.tests.base.TestBase;
 import com.cydeo.utilities.BrowserUtils;
-import com.cydeo.utilities.Driver;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -10,14 +10,14 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class ExplicitWaitPractices {
+public class ExplicitWaitPractices extends TestBase {
 
     DynamicControlsPage dynamicControlsPage;
 
     @BeforeMethod
     public void setupMethod() {
 
-        Driver.getDriver().get("https://practice.cydeo.com/dynamic_controls");
+        driver.get("https://practice.cydeo.com/dynamic_controls");
         dynamicControlsPage = new DynamicControlsPage();
 
     }
@@ -28,8 +28,8 @@ public class ExplicitWaitPractices {
         dynamicControlsPage.removeButton.click();
 
         //4- Wait until “loading bar disappears”
-//        Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-//        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+//        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
 //        wait.until(ExpectedConditions.invisibilityOf(dynamicControlsPage.loadingBar));
 
         BrowserUtils.waitForInvisibilityOf(dynamicControlsPage.loadingBar);
@@ -39,7 +39,7 @@ public class ExplicitWaitPractices {
 
         try {
             //assertFalse method will pass the test if the boolean value returned is: false
-            Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
             Assert.assertTrue(!dynamicControlsPage.checkbox.isDisplayed());
             Assert.assertFalse(dynamicControlsPage.checkbox.isDisplayed());
         } catch (NoSuchElementException n) {

@@ -1,18 +1,18 @@
 package com.cydeo.tests.day12_pom_design_explicit_wait;
 
 import com.cydeo.pages.LibraryLoginPage;
-import com.cydeo.utilities.Driver;
+import com.cydeo.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class POMPractices {
+public class POMPractices extends TestBase {
 
     LibraryLoginPage libraryLoginPage;
 
     @BeforeMethod
     public void setupMethod() {
-        Driver.getDriver().get("https://library1.cydeo.com/");
+        driver.get("https://library1.cydeo.com/");
         libraryLoginPage = new LibraryLoginPage();
     }
 
@@ -30,7 +30,7 @@ public class POMPractices {
         //Expected: This field is required.
         Assert.assertTrue(libraryLoginPage.fieldRequiredErrorMessage.isDisplayed());
 
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @Test
@@ -48,7 +48,7 @@ public class POMPractices {
         //Expected: Please enter a valid email address.
         Assert.assertTrue(libraryLoginPage.enterValidEmailErrorMessage.isDisplayed());
 
-        Driver.closeDriver();
+        //Driver.closeDriver();
 
     }
 
@@ -67,7 +67,7 @@ public class POMPractices {
         //4- Verify title expected error is displayed:
         //Expected: Sorry, Wrong Email or Password
         Assert.assertTrue(libraryLoginPage.wrongEmailOrPasswordErrorMessage.isDisplayed());
-        Driver.closeDriver();
+        //Driver.closeDriver();
 
     }
 
