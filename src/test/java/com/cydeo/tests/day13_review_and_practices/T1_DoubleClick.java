@@ -30,7 +30,5 @@ public class T1_DoubleClick extends TestBase {
         String expectedInStyleAttribute = "red";
 
         Assert.assertTrue(actualStyleAttributeValue.contains(expectedInStyleAttribute));
-
     }
-
 }
