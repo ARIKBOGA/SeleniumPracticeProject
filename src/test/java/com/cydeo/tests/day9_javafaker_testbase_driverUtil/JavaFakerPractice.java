@@ -44,6 +44,5 @@ public class JavaFakerPractice {
         System.out.println("faker.artist().name() = " + faker.artist().name());
 
 
-
     }
 }

@@ -70,7 +70,6 @@ public class TestCase17 {
         List<WebElement> chartDeleteButtons = driver.findElements(By.xpath("//p[@class='cart_total_price']/../following-sibling::td[1]/a"));
 
 
-
         // if an element has a price more than 600, add that element to "willBeDeleted" list so that will be deleted
         for (int i = 0; i < chartElementPrices.size(); i++) {
             if (Integer.parseInt(chartElementPrices.get(i).getText().substring(4)) > 600) {

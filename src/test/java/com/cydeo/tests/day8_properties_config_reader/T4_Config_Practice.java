@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class T4_Config_Practice {
 
-   public WebDriver driver;
+    public WebDriver driver;
 //
 //    @BeforeMethod
 //    public void setupMethod(){
@@ -47,7 +47,7 @@ public class T4_Config_Practice {
     }
 
     @AfterMethod
-    public void teardown(){
+    public void teardown() {
         driver.quit();
     }
 }
