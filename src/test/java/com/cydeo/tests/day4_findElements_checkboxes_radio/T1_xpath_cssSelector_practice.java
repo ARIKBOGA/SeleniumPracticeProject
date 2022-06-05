@@ -1,6 +1,6 @@
 package com.cydeo.tests.day4_findElements_checkboxes_radio;
 
-import com.cydeo.utilities.HandleWait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -68,7 +68,7 @@ public class T1_xpath_cssSelector_practice {
         System.out.println("retrievePasswordBtn.isDisplayed() = " + retrievePasswordBtn.isDisplayed());
         System.out.println("poweredByCydeoText.isDisplayed() = " + poweredByCydeoText.isDisplayed());
 
-        HandleWait.staticWait(3);
+        BrowserUtils.sleep(3);
         driver.quit();
     }
 }

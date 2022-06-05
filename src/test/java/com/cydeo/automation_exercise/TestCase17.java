@@ -1,6 +1,6 @@
 package com.cydeo.automation_exercise;
 
-import com.cydeo.utilities.HandleWait;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -50,9 +50,9 @@ public class TestCase17 {
         List<WebElement> webElementList = new ArrayList<>(List.of(product1, product2, product3));
         webElementList.forEach(p -> {
             p.click();
-            HandleWait.staticWait(1);
+            BrowserUtils.sleep(1);
             driver.findElement(By.xpath("//button[@data-dismiss='modal']")).click();
-            HandleWait.staticWait(1);
+            BrowserUtils.sleep(1);
         });
 
 
@@ -76,7 +76,7 @@ public class TestCase17 {
 
                 // click to "X" button to delete
                 chartDeleteButtons.get(i).click();
-                HandleWait.staticWait(1);
+                BrowserUtils.sleep(1);
 
             }
         }
