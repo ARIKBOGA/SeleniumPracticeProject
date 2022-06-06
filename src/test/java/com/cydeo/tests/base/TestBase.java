@@ -2,6 +2,7 @@ package com.cydeo.tests.base;
 
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -59,4 +60,11 @@ public abstract class TestBase {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).perform();
     }
+
+    public void actionsSendKeysFunction(Keys... keys) {
+        Actions actions = new Actions(driver);
+        actions.sendKeys(keys).perform();
+    }
+
+
 }
