@@ -51,9 +51,9 @@ public abstract class TestBase {
         System.out.println("My message: " + alertMessageElement.getText());
     }
 
-    public void executeJavascriptFunction(String JSCode, WebElement element) {
+    public void executeJavascriptFunction(String script, WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript(JSCode, element);
+        js.executeScript(script, element);
     }
 
     public void actionsMoveElementFunction(WebElement element) {
@@ -65,6 +65,5 @@ public abstract class TestBase {
         Actions actions = new Actions(driver);
         actions.sendKeys(keys).perform();
     }
-
 
 }
