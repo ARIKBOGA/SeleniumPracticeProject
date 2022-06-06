@@ -27,17 +27,17 @@ public class T4_5_ScrollPractice extends TestBase {
         driver.get("https://practice.cydeo.com/");
 
         //3- Scroll down to “Powered by CYDEO”
-        executeJavascript("arguments[0].scrollIntoView(true)",poweredByCydeoLink);
+        executeJavascriptFunction("arguments[0].scrollIntoView(true)",poweredByCydeoLink);
         BrowserUtils.sleep(1);
 
         //4- Scroll using Actions class “moveTo(element)” method
-        actionsMoveElement(hoversLink);
+        actionsMoveElementFunction(hoversLink);
         BrowserUtils.sleep(2);
 
         //TC #5: Scroll practice 2
         //1- Continue from where the Task 4 is left in the same test.
         //2- Scroll back up to “Home” link using PageUP button
-        actionsMoveElement(homeLink);
+        actionsMoveElementFunction(homeLink);
         BrowserUtils.sleep(3);
     }
 }

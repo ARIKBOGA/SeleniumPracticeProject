@@ -50,12 +50,12 @@ public abstract class TestBase {
         System.out.println("My message: " + alertMessageElement.getText());
     }
 
-    public void executeJavascript(String JSCode, WebElement element) {
+    public void executeJavascriptFunction(String JSCode, WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript(JSCode, element);
     }
 
-    public void actionsMoveElement(WebElement element) {
+    public void actionsMoveElementFunction(WebElement element) {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).perform();
     }
