@@ -24,7 +24,6 @@ public abstract class TestBase {
         wait = new WebDriverWait(driver, 10);
     }
 
-
     @AfterMethod
     public void tearDown() {
         Driver.closeDriver();
@@ -45,10 +44,15 @@ public abstract class TestBase {
         select.selectByVisibleText(visibleText);
     }
 
-    public void assertionFunction(WebElement alertMessageElement, String expectedMessage) {
+    public void assertEqualsFunction(WebElement alertMessageElement, String expectedMessage) {
         wait.until(ExpectedConditions.visibilityOf(alertMessageElement));
         Assert.assertEquals(alertMessageElement.getText(), expectedMessage);
         System.out.println("My message: " + alertMessageElement.getText());
+    }
+
+    public void isDisplayedFunction(WebElement assertTrueElement) {
+        wait.until(ExpectedConditions.visibilityOf(assertTrueElement));
+        Assert.assertTrue(assertTrueElement.isDisplayed());
     }
 
     public void executeJavascriptFunction(String script, WebElement element) {
