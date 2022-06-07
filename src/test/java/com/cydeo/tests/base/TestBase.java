@@ -52,11 +52,13 @@ public abstract class TestBase {
     }
 
     public void executeJavascriptFunction(String script, WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript(script, element);
     }
 
     public void actionsMoveElementFunction(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
         Actions actions = new Actions(driver);
         actions.moveToElement(element).perform();
     }
