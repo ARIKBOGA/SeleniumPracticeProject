@@ -55,6 +55,11 @@ public abstract class TestBase {
         Assert.assertTrue(assertTrueElement.isDisplayed());
     }
 
+    public void isEnabledFunction(WebElement assertTrueElement) {
+        wait.until(ExpectedConditions.visibilityOf(assertTrueElement));
+        Assert.assertTrue(assertTrueElement.isEnabled());
+    }
+
     public void executeJavascriptFunction(String script, WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
         JavascriptExecutor js = (JavascriptExecutor) driver;
