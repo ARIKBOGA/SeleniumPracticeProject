@@ -28,9 +28,9 @@ public class ExplicitWaitPractices extends TestBase {
         dynamicControlsPage.removeButton.click();
 
         //4- Wait until “loading bar disappears”
-//        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-//        WebDriverWait wait = new WebDriverWait(driver, 10);
-//        wait.until(ExpectedConditions.invisibilityOf(dynamicControlsPage.loadingBar));
+        // driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        // WebDriverWait wait = new WebDriverWait(driver, 10);
+        // wait.until(ExpectedConditions.invisibilityOf(dynamicControlsPage.loadingBar));
 
         BrowserUtils.waitForInvisibilityOf(dynamicControlsPage.loadingBar);
 
@@ -40,15 +40,14 @@ public class ExplicitWaitPractices extends TestBase {
         try {
             //assertFalse method will pass the test if the boolean value returned is: false
             driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-            Assert.assertTrue(!dynamicControlsPage.checkbox.isDisplayed());
-            Assert.assertFalse(dynamicControlsPage.checkbox.isDisplayed());
+            Assert.assertTrue(dynamicControlsPage.message.isDisplayed());
         } catch (NoSuchElementException n) {
             Assert.assertTrue(true);
         }
 
         //b. “It’s gone!” message is displayed.
-        Assert.assertTrue(dynamicControlsPage.message.isDisplayed());
-        Assert.assertTrue(dynamicControlsPage.message.getText().equals("It's gone!"));
+        isDisplayedFunction(dynamicControlsPage.message);
+        assertEqualsFunction(dynamicControlsPage.message, "It's gone!");
     }
 
     @Test
@@ -58,7 +57,7 @@ public class ExplicitWaitPractices extends TestBase {
         //System.out.println("dynamicControlsPage.inputBox.isEnabled() = "
         //        + dynamicControlsPage.inputBox.isEnabled());
 
-        dynamicControlsPage.enableButton.click();
+        clickFunction(dynamicControlsPage.enableButton);
 
         System.out.println("dynamicControlsPage.inputBox.isEnabled() = "
                 + dynamicControlsPage.inputBox.isEnabled());
@@ -72,14 +71,13 @@ public class ExplicitWaitPractices extends TestBase {
 
         //5- Verify:
         //a. Input box is enabled.
-        Assert.assertTrue(dynamicControlsPage.inputBox.isEnabled());
+        isEnabledFunction(dynamicControlsPage.inputBox);
 
         //b. “It’s enabled!” message is displayed.
-        Assert.assertTrue(dynamicControlsPage.message.isDisplayed());
+        isDisplayedFunction(dynamicControlsPage.message);
 
         //Check the String value is matching as expected: “It’s enabled!”
-        Assert.assertTrue(dynamicControlsPage.message.getText().equals("It's enabled!"));
+        assertEqualsFunction(dynamicControlsPage.message, "It's enabled!");
 
     }
-
 }
