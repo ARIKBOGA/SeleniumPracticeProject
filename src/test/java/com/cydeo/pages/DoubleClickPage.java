@@ -10,6 +10,9 @@ public class DoubleClickPage {
     @FindBy(id = "demo")
     public WebElement textToDoubleClick;
 
+    @FindBy(id = "iframeResult")
+    public WebElement iframe;
+
     public DoubleClickPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
